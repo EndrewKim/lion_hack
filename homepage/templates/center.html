@@ -1,0 +1,22 @@
+<!-- 기관 소개 페이지-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+      <h1>기관 이름</h1>
+      <img src="https://www.betogether.or.kr/files/attach/images/203/930/023/0de6aa51f024dd242d8ef1720ef7abcc.jpg" alt="Image of ..." class="img-thumbnail" hieght='300' width='300'>
+      
+      
+      
+    <h1> 기관 이름 : {{project.center_name}} </h1>
+    <p> 기관 사진 : <img src="{{project.center_image}}" alt="Image of ..." class="img-thumbnail" hieght='300' width='300'> </p>    
+    <p> 기관 위치 : {{project.center_location}} </p>
+    <p> 기관 종류 : {{project.center_type}} </p>
+    <br><br>
+      
+      
+      
+    
+ {% endblock %}

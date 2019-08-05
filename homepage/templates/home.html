@@ -1,0 +1,89 @@
+<!--메인 페이지-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+      <div class="header__contents">
+        <h1 class="header__head">
+            <br><br>
+          복지 가즈아
+        </h1>
+          <br><br>
+        <p class="header__text">
+          복지 기관 검색 플랫폼.<br><br><br>
+        </p>
+      </div>
+    </div>
+ </div>
+
+  
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+
+        <h5 class="my-0 mr-md-auto font-weight-normal"> 검색 </h5>
+  </div>
+
+<!-- 카테고리 페이지-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% for project in projects.all%}
+
+<div class="row mb-2">
+    
+    
+        <div class="col-md-6" >
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" hieght="250" width ="500">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary">{{project.center_name}}</strong>
+              <h3 class="mb-0">{{project.name}}</h3>
+              <div class="mb-1 text-muted">{{project.date}}</div>
+              <p class="card-text mb-auto">{{project.product_type}}</p>
+              <br>
+              <p class="card-text mb-auto">{{project.project_explain}}</p>
+              <a href="{%url 'center' project.id%}" class="stretched-link">Continue reading</a>
+            </div>
+            <img src="{{project.center_image}}" alt="Image of ..." class="img-thumbnail" hieght="250" width="200">
+            </div>
+          </div>
+        </div>
+{%endfor%}    
+    
+        <div class="col-md-6">
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Design</strong>
+              <h3 class="mb-0">Post title</h3>
+              <div class="mb-1 text-muted">Nov 11</div>
+              <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+</div>
+
+
+
+
+{% endblock %}
